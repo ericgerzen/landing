@@ -2,8 +2,8 @@
   // Section IDs for scrolling
   const sections = [
     'inicio',
-    'quienes-somos',
-    'nuestros-objetivos',
+    'la-propuesta',
+    'nosotros',
     'la-plataforma',
     'ingresar-ahora'
   ];
@@ -20,10 +20,10 @@
   {#each sections as section, i}
     <button class="nav-title" on:click={() => scrollToSection(section)}>
       {#if i === 0}Inicio{/if}
-      {#if i === 1}Quienes Somos{/if}
-      {#if i === 2}Nuestros Objetivos{/if}
-      {#if i === 3}La Plataforma{/if}
-      {#if i === 4}Ingresar Ahora{/if}
+      {#if i === 1}La propuesta{/if}
+      {#if i === 2}¿Por qué nosotros?{/if}
+      {#if i === 3}La plataforma{/if}
+      {#if i === 4}Ingresar ahora{/if}
     </button>
   {/each}
 </nav>
@@ -70,4 +70,3 @@
   }
 }
 </style>
-

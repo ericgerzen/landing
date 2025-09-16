@@ -14,39 +14,61 @@
     </div>
   </section>
 
-  <!-- Section 2: Quienes Somos -->
-  <section id="quienes-somos" class="section section-light">
-    <h2 class="section-title center">¿Quiénes somos?</h2>
-    <ul class="section-list">
-      <li>• Primer ítem de ejemplo</li>
-      <li>• Segundo ítem de ejemplo</li>
-      <li>• Tercer ítem de ejemplo</li>
-    </ul>
+  <!-- Section 2: La Propuesta -->
+  <section id="la-propuesta" class="section section-light">
+    <h2 class="section-title section-title-large center section-title-top">La propuesta</h2>
+    <div class="section-icons-row">
+      <div class="icon-text">
+        <img src="/Tacho.png" alt="Icono 1" class="icon-img" />
+        <span>Primer ítem de ejemplo</span>
+      </div>
+      <div class="icon-text">
+        <img src="/Bombilla.png" alt="Icono 2" class="icon-img" />
+        <span>Segundo ítem de ejemplo</span>
+      </div>
+      <div class="icon-text">
+        <img src="/Reciclar.png" alt="Icono 3" class="icon-img" />
+        <span>Tercer ítem de ejemplo</span>
+      </div>
+    </div>
   </section>
 
-  <!-- Section 3: Nuestros Objetivos -->
-  <section id="nuestros-objetivos" class="section section-alt">
-    <h2 class="section-title center">Nuestros objetivos</h2>
-    <ul class="section-list">
-      <li>• Primer objetivo de ejemplo</li>
-      <li>• Segundo objetivo de ejemplo</li>
-      <li>• Tercer objetivo de ejemplo</li>
-    </ul>
+  <!-- Section 3: Nosotros -->
+  <section id="nosotros" class="section section-alt">
+    <h2 class="section-title section-title-large center section-title-top">¿Por qué nosotros?</h2>
+    <div class="section-icons-row">
+      <div class="icon-text">
+        <img src="/Escudo.png" alt="Icono 1" class="icon-img" />
+        <span>Primer objetivo de ejemplo</span>
+      </div>
+      <div class="icon-text">
+        <img src="/Checklist.png" alt="Icono 2" class="icon-img" />
+        <span>Segundo objetivo de ejemplo</span>
+      </div>
+      <div class="icon-text">
+        <img src="/Pricetag.png" alt="Icono 3" class="icon-img" />
+        <span>Tercer objetivo de ejemplo</span>
+      </div>
+    </div>
   </section>
 
   <!-- Section 4: La Plataforma -->
   <section id="la-plataforma" class="section section-light">
-    <h2 class="section-title center">La plataforma</h2>
-    <div class="platform-images center">
-      <img src="/gpu.png" alt="Plataforma 1" />
-      <img src="/gpu.png" alt="Plataforma 2" />
-      <img src="/gpu.png" alt="Plataforma 3" />
+    <h2 class="section-title section-title-large center section-title-top">La plataforma</h2>
+    <div class="section-icons-row">
+      <div class="icon-text">
+        <img src="/gpu.png" alt="Plataforma 1" class="icon-img" />
+        <span>Característica de ejemplo</span>
+      </div>
+      <div class="icon-text">
+        <img src="/gpu.png" alt="Plataforma 2" class="icon-img" />
+        <span>Otra característica</span>
+      </div>
+      <div class="icon-text">
+        <img src="/gpu.png" alt="Plataforma 3" class="icon-img" />
+        <span>Más detalles</span>
+      </div>
     </div>
-    <ul class="section-list">
-      <li>• Característica de ejemplo</li>
-      <li>• Otra característica</li>
-      <li>• Más detalles</li>
-    </ul>
   </section>
 
   <!-- Section 5: Ingresá Ahora -->
@@ -83,13 +105,13 @@
   gap: 2vw;
 }
 .hero-logo {
-  width: 80px;
-  height: 80px;
-  border-radius: 20px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
   background: #fff;
   box-shadow: 0 2px 8px #0001;
   object-fit: contain;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
 }
 .hero-title {
   font-size: 2.8rem;
@@ -110,14 +132,13 @@
   margin-bottom: 1.2rem;
   color: #3A3A3A;
 }
-.section-list {
-  font-size: 1.1rem;
-  font-family: 'Rubik', sans-serif;
-  color: #555;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
+.section-title-large {
+  font-size: 3rem;
+  font-weight: 800;
+}
+.section-title-top {
+  margin-top: 12vh;
+  margin-bottom: 3vh;
 }
 .platform-images {
   display: flex;
@@ -171,6 +192,35 @@
   background: #F7F8FA;
   box-shadow: 0 2px 12px rgba(76, 110, 245, 0.04);
 }
+.section-icons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5vw;
+  margin-top: 2vh;
+}
+.icon-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  min-width: 160px;
+}
+.icon-text span {
+  font-size: 2rem;
+  font-family: 'Rubik', sans-serif;
+  color: #444;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.2rem;
+}
+.icon-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
 @media (max-width: 700px) {
   .main-content {
     margin-top: 48px;
@@ -181,6 +231,10 @@
   .hero-title {
     font-size: 2rem;
   }
+  .hero-logo {
+    width: 80px;
+    height: 80px;
+  }
   .platform-images img {
     width: 40px;
     height: 40px;
@@ -188,6 +242,23 @@
   .cta-button {
     font-size: 1rem;
     padding: 0.7rem 1.5rem;
+  }
+  .section-title-large {
+    font-size: 2rem;
+  }
+  .section-icons-row {
+    gap: 2vw;
+  }
+  .icon-text {
+    min-width: 100px;
+    gap: 0.7rem;
+  }
+  .icon-text span {
+    font-size: 1rem;
+  }
+  .icon-img {
+    width: 40px;
+    height: 40px;
   }
 }
 </style>

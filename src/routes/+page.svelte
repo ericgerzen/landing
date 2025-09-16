@@ -17,18 +17,18 @@
   <!-- Section 2: La Propuesta -->
   <section id="la-propuesta" class="section section-light">
     <h2 class="section-title section-title-large center section-title-top">La propuesta</h2>
-    <div class="section-icons-row">
+    <div class="section-icons-row spaced-row">
       <div class="icon-text">
         <img src="/Tacho.png" alt="Icono 1" class="icon-img" />
-        <span>Primer ítem de ejemplo</span>
+        <span>El E-waste forma gran parte<br>de la contaminacion mundial.<br>Miles de componentes aún<br>operativos se desechan a diario.</span>
       </div>
       <div class="icon-text">
         <img src="/Bombilla.png" alt="Icono 2" class="icon-img" />
-        <span>Segundo ítem de ejemplo</span>
+        <span>Decidimos traer un<br>modelo de mercado<br>extranjero al pais para<br>abarcar este problema.</span>
       </div>
       <div class="icon-text">
         <img src="/Reciclar.png" alt="Icono 3" class="icon-img" />
-        <span>Tercer ítem de ejemplo</span>
+        <span>Un marketplace basado en<br>electronicos testeados y<br>reutilizados, eco friendly,<br>con mejores precios.</span>
       </div>
     </div>
   </section>
@@ -36,18 +36,18 @@
   <!-- Section 3: Nosotros -->
   <section id="nosotros" class="section section-alt">
     <h2 class="section-title section-title-large center section-title-top">¿Por qué nosotros?</h2>
-    <div class="section-icons-row">
+    <div class="section-icons-row spaced-row">
       <div class="icon-text">
         <img src="/Escudo.png" alt="Icono 1" class="icon-img" />
-        <span>Primer objetivo de ejemplo</span>
+        <span>Ofrecemos excelentes<br>garantías</span>
       </div>
       <div class="icon-text">
         <img src="/Checklist.png" alt="Icono 2" class="icon-img" />
-        <span>Segundo objetivo de ejemplo</span>
+        <span>Todos nuestros productos<br>son extensamente testeados</span>
       </div>
       <div class="icon-text">
         <img src="/Pricetag.png" alt="Icono 3" class="icon-img" />
-        <span>Tercer objetivo de ejemplo</span>
+        <span>Cobramos mínimas tarifas<br>a los vendedores</span>
       </div>
     </div>
   </section>
@@ -55,18 +55,18 @@
   <!-- Section 4: La Plataforma -->
   <section id="la-plataforma" class="section section-light">
     <h2 class="section-title section-title-large center section-title-top">La plataforma</h2>
-    <div class="section-icons-row">
+    <div class="section-icons-row spaced-row">
       <div class="icon-text">
         <img src="/gpu.png" alt="Plataforma 1" class="icon-img" />
-        <span>Característica de ejemplo</span>
+        <span>Característica<br>de ejemplo</span>
       </div>
       <div class="icon-text">
         <img src="/gpu.png" alt="Plataforma 2" class="icon-img" />
-        <span>Otra característica</span>
+        <span>OCaracterística<br>de ejemplo</span>
       </div>
       <div class="icon-text">
         <img src="/gpu.png" alt="Plataforma 3" class="icon-img" />
-        <span>Más detalles</span>
+        <span>Característica<br>de ejemplo</span>
       </div>
     </div>
   </section>
@@ -200,6 +200,9 @@
   gap: 5vw;
   margin-top: 2vh;
 }
+.spaced-row {
+  gap: 10vw;
+}
 .icon-text {
   display: flex;
   flex-direction: column;
@@ -208,7 +211,7 @@
   min-width: 160px;
 }
 .icon-text span {
-  font-size: 2rem;
+  font-size: 1.2rem;
   font-family: 'Rubik', sans-serif;
   color: #444;
   font-weight: 500;
@@ -216,8 +219,8 @@
   margin-top: 0.2rem;
 }
 .icon-img {
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
   margin-bottom: 0.5rem;
 }
@@ -257,8 +260,8 @@
     font-size: 1rem;
   }
   .icon-img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 </style>

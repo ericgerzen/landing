@@ -73,7 +73,7 @@
 
   <!-- Section 5: Ingresá Ahora -->
   <section id="ingresar-ahora" class="section section-alt section-cta">
-    <h2 class="section-title center">Ingresá ahora</h2>
+    <h2 class="section-title section-title-large center">Ingresá ahora</h2>
     <p class="cta-subtitle center">¡Registrate y sé parte del cambio!</p>
     <button class="cta-button">Llevame ahí</button>
   </section>

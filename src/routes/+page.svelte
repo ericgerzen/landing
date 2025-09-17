@@ -82,7 +82,11 @@
   <!-- Section 5: Ingresá Ahora -->
   <section id="ingresar-ahora" class="section section-alt section-cta">
     <h2 class="section-title section-title-large center">Ingresá ahora</h2>
-    <img src="/LAPITOPI.png" alt="Lapitopi" class="cta-lapitopi" />
+    <div class="cta-icons-row">
+      <img src="/User_fill.png" alt="Usuario" class="cta-side-icon" />
+      <img src="/LAPITOPI.png" alt="Lapitopi" class="cta-lapitopi" />
+      <img src="/Subtract.png" alt="Tiempo" class="cta-side-icon" />
+    </div>
     <p class="cta-subtitle center">¡Registrate y sé parte del cambio!</p>
     <button class="cta-button">Llevame ahí</button>
   </section>
@@ -343,6 +347,22 @@
 .downwards-link:hover {
   transform: translateY(6px) scale(1.08);
 }
+.cta-icons-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  margin-bottom: 2rem;
+}
+.cta-side-icon {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px #0001;
+}
 @media (max-width: 700px) {
   .main-content {
     margin-top: 48px;
@@ -408,6 +428,10 @@
   .downwards-img {
     width: 32px;
     height: 32px;
+  }
+  .cta-side-icon {
+    width: 50px;
+    height: 50px;
   }
 }
 @media (max-width: 900px) {

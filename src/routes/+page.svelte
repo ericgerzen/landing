@@ -1,5 +1,10 @@
 <script>
-  // No script needed for static content
+  function scrollToPropuesta() {
+    const el = document.getElementById('la-propuesta');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 </script>
 
 <main class="main-content">
@@ -12,23 +17,29 @@
         <p class="hero-subtitle center">Tu marketplace ecológico de confianza</p>
       </div>
     </div>
+    <div class="downwards-container">
+      <span class="downwards-text downwards-text-more-transparent">¡Conocé quiénes somos!</span>
+      <a href="#la-propuesta" class="downwards-link" on:click|preventDefault={scrollToPropuesta}>
+        <img src="/downwards.png" alt="Flecha hacia abajo" class="downwards-img downwards-img-original" />
+      </a>
+    </div>
   </section>
 
   <!-- Section 2: La Propuesta -->
   <section id="la-propuesta" class="section section-light">
     <h2 class="section-title section-title-large center section-title-top">La propuesta</h2>
-    <div class="section-icons-row spaced-row">
+    <div class="section-icons-row spaced-row more-space">
       <div class="icon-text">
         <img src="/Tacho.png" alt="Icono 1" class="icon-img" />
-        <span>El E-waste forma gran parte<br>de la contaminacion mundial.<br>Miles de componentes aún<br>operativos se desechan a diario.</span>
+        <span class="icon-desc">El E-waste forma gran parte<br>de la contaminacion mundial.<br>Miles de componentes aún<br>operativos se desechan a diario.</span>
       </div>
       <div class="icon-text">
         <img src="/Bombilla.png" alt="Icono 2" class="icon-img" />
-        <span>Decidimos traer un<br>modelo de mercado<br>extranjero al pais para<br>abarcar este problema.</span>
+        <span class="icon-desc">Decidimos traer un<br>modelo de mercado<br>extranjero al pais para<br>abarcar este problema.</span>
       </div>
       <div class="icon-text">
         <img src="/Reciclar.png" alt="Icono 3" class="icon-img" />
-        <span>Un marketplace basado en<br>electronicos testeados y<br>reutilizados, eco friendly,<br>con mejores precios.</span>
+        <span class="icon-desc">Un marketplace basado en<br>electronicos testeados y<br>reutilizados, eco friendly,<br>con mejores precios.</span>
       </div>
     </div>
   </section>
@@ -36,37 +47,34 @@
   <!-- Section 3: Nosotros -->
   <section id="nosotros" class="section section-alt">
     <h2 class="section-title section-title-large center section-title-top">¿Por qué nosotros?</h2>
-    <div class="section-icons-row spaced-row">
+    <div class="section-icons-row spaced-row more-space">
       <div class="icon-text">
         <img src="/Escudo.png" alt="Icono 1" class="icon-img" />
-        <span>Ofrecemos excelentes<br>garantías</span>
+        <span class="icon-desc">Ofrecemos excelentes<br>garantías</span>
       </div>
       <div class="icon-text">
         <img src="/Checklist.png" alt="Icono 2" class="icon-img" />
-        <span>Todos nuestros productos<br>son extensamente testeados</span>
+        <span class="icon-desc">Todos nuestros productos<br>son extensamente testeados</span>
       </div>
       <div class="icon-text">
         <img src="/Pricetag.png" alt="Icono 3" class="icon-img" />
-        <span>Cobramos mínimas tarifas<br>a los vendedores</span>
+        <span class="icon-desc">Cobramos mínimas tarifas<br>a los vendedores</span>
       </div>
     </div>
   </section>
 
   <!-- Section 4: La Plataforma -->
-  <section id="la-plataforma" class="section section-light">
+  <section id="la-plataforma" class="section section-light platform-bg-section">
     <h2 class="section-title section-title-large center section-title-top">La plataforma</h2>
-    <div class="section-icons-row spaced-row">
-      <div class="icon-text">
-        <img src="/gpu.png" alt="Plataforma 1" class="icon-img" />
-        <span>Característica<br>de ejemplo</span>
+    <div class="platform-bg-row">
+      <div class="platform-bg-col" style="--bg-img: url('/gpu.png');">
+        <img src="/gpu.png" alt="Plataforma 1" class="icon-img platform-img-round platform-img-xlarge" />
       </div>
-      <div class="icon-text">
-        <img src="/gpu.png" alt="Plataforma 2" class="icon-img" />
-        <span>OCaracterística<br>de ejemplo</span>
+      <div class="platform-bg-col" style="--bg-img: url('/wcooling.png');">
+        <img src="/wcooling.png" alt="Plataforma 2" class="icon-img platform-img-round platform-img-xlarge" />
       </div>
-      <div class="icon-text">
-        <img src="/gpu.png" alt="Plataforma 3" class="icon-img" />
-        <span>Característica<br>de ejemplo</span>
+      <div class="platform-bg-col" style="--bg-img: url('/pc.png');">
+        <img src="/pc.png" alt="Plataforma 3" class="icon-img platform-img-round platform-img-xlarge" />
       </div>
     </div>
   </section>
@@ -74,6 +82,7 @@
   <!-- Section 5: Ingresá Ahora -->
   <section id="ingresar-ahora" class="section section-alt section-cta">
     <h2 class="section-title section-title-large center">Ingresá ahora</h2>
+    <img src="/LAPITOPI.png" alt="Lapitopi" class="cta-lapitopi" />
     <p class="cta-subtitle center">¡Registrate y sé parte del cambio!</p>
     <button class="cta-button">Llevame ahí</button>
   </section>
@@ -97,6 +106,7 @@
 .section-hero {
   background: linear-gradient(90deg, #6C63FF 0%, #48C9B0 100%);
   color: #fff;
+  position: relative;
 }
 .hero-content {
   display: flex;
@@ -203,6 +213,9 @@
 .spaced-row {
   gap: 10vw;
 }
+.more-space {
+  gap: 14vw;
+}
 .icon-text {
   display: flex;
   flex-direction: column;
@@ -210,7 +223,7 @@
   gap: 1.2rem;
   min-width: 160px;
 }
-.icon-text span {
+.icon-desc {
   font-size: 1.2rem;
   font-family: 'Rubik', sans-serif;
   color: #444;
@@ -223,6 +236,112 @@
   height: 96px;
   object-fit: contain;
   margin-bottom: 0.5rem;
+}
+.platform-img-round {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px #0001;
+  object-fit: cover;
+}
+.platform-more-space {
+  gap: 16vw;
+}
+.platform-img-large {
+  width: 160px;
+  height: 160px;
+}
+.platform-img-xlarge {
+  width: 220px;
+  height: 220px;
+}
+.cta-lapitopi {
+  display: block;
+  margin: 2rem auto 2rem auto;
+  width: 320px;
+  max-width: 80vw;
+  height: auto;
+}
+.platform-bg-section {
+  position: relative;
+  overflow: hidden;
+}
+.platform-bg-row {
+  display: flex;
+  width: 100vw;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+}
+.platform-bg-col {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  background: none;
+}
+.platform-bg-col::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 70%;
+  transform: translate(-50%, -50%);
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.13;
+  z-index: 1;
+  border-radius: 50%;
+}
+.platform-bg-col img {
+  position: relative;
+  z-index: 2;
+}
+.downwards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4vh;
+  z-index: 10;
+}
+.downwards-text {
+  color: rgba(255,255,255,0.85);
+  font-size: 1.3rem;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  text-shadow: 0 2px 8px #0002;
+}
+.downwards-text-more-transparent {
+  color: rgba(255,255,255,0.55);
+}
+.downwards-img {
+  width: 48px;
+  height: 48px;
+  opacity: 0.85;
+}
+.downwards-img-original {
+  width: 64px;
+  height: 16px;
+  opacity: 0.85;
+}
+.downwards-link {
+  display: block;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.downwards-link:hover {
+  transform: translateY(6px) scale(1.08);
 }
 @media (max-width: 700px) {
   .main-content {
@@ -262,6 +381,45 @@
   .icon-img {
     width: 60px;
     height: 60px;
+  }
+  .platform-img-round {
+    width: 70px;
+    height: 70px;
+  }
+  .platform-more-space {
+    gap: 6vw;
+  }
+  .platform-img-large {
+    width: 90px;
+    height: 90px;
+  }
+  .platform-img-xlarge {
+    width: 120px;
+    height: 120px;
+  }
+  .cta-lapitopi {
+    width: 180px;
+    margin: 1.2rem auto 1.2rem auto;
+  }
+  .downwards-text {
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
+  }
+  .downwards-img {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (max-width: 900px) {
+  .platform-bg-row {
+    flex-direction: column;
+    height: auto;
+    min-height: 60vw;
+  }
+  .platform-bg-col {
+    width: 100vw;
+    min-height: 33vw;
+    height: 33vw;
   }
 }
 </style>

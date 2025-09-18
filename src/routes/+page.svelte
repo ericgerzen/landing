@@ -83,7 +83,7 @@
   <section id="ingresar-ahora" class="section section-alt section-cta">
     <h2 class="section-title section-title-large center">Ingresá ahora</h2>
     <div class="cta-icons-row">
-      <img src="/User_fill.png" alt="Usuario" class="cta-side-icon" />
+      <img src="/user.png" alt="Usuario" class="cta-side-icon" />
       <img src="/LAPITOPI.png" alt="Lapitopi" class="cta-lapitopi" />
       <img src="/Subtract.png" alt="Tiempo" class="cta-side-icon" />
     </div>
@@ -153,12 +153,6 @@
 .section-title-top {
   margin-top: 12vh;
   margin-bottom: 3vh;
-}
-.platform-images {
-  display: flex;
-  gap: 2vw;
-  margin-bottom: 1.2rem;
-  justify-content: center;
 }
 .platform-images img {
   width: 60px;
@@ -249,13 +243,6 @@
   box-shadow: 0 2px 8px #0001;
   object-fit: cover;
 }
-.platform-more-space {
-  gap: 16vw;
-}
-.platform-img-large {
-  width: 160px;
-  height: 160px;
-}
 .platform-img-xlarge {
   width: 220px;
   height: 220px;
@@ -315,7 +302,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 4vh;
+  bottom: 14vh;
   z-index: 10;
 }
 .downwards-text {
@@ -358,9 +345,8 @@
 .cta-side-icon {
   width: 90px;
   height: 90px;
-  object-fit: contain;
+  object-fit: cover;
   border-radius: 50%;
-  background: #fff;
   box-shadow: 0 2px 8px #0001;
 }
 @media (max-width: 700px) {
@@ -406,13 +392,6 @@
     width: 70px;
     height: 70px;
   }
-  .platform-more-space {
-    gap: 6vw;
-  }
-  .platform-img-large {
-    width: 90px;
-    height: 90px;
-  }
   .platform-img-xlarge {
     width: 120px;
     height: 120px;
@@ -420,6 +399,9 @@
   .cta-lapitopi {
     width: 180px;
     margin: 1.2rem auto 1.2rem auto;
+  }
+  .downwards-container {
+    bottom: 10vh;
   }
   .downwards-text {
     font-size: 1rem;
@@ -432,6 +414,8 @@
   .cta-side-icon {
     width: 50px;
     height: 50px;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
   }
 }
 @media (max-width: 900px) {

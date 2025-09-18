@@ -355,7 +355,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 20vw;
+        gap: 15vw;
         margin-bottom: 2rem;
     }
     .cta-side-icon {

@@ -83,14 +83,14 @@
     <section id="ingresar-ahora" class="section section-alt section-cta">
         <h2 class="section-title section-title-large center">Ingresá ahora</h2>
         <div class="cta-icons-row">
-            <div class="cta-side-icon-container">
+            <div class="cta-side-icon-container left">
                 <img src="/user.png" alt="Usuario" class="cta-side-icon" />
                 <span class="icon-desc">Formá parte de nuestra base de</span>
                 <span class="colorful-text">3</span>
                 <span class="icon-desc">usuarios</span>
             </div>
             <img src="/LAPITOPI.png" alt="Lapitopi" class="cta-lapitopi" />
-            <div class="cta-side-icon-container">
+            <div class="cta-side-icon-container right">
                 <img src="/Subtract.png" alt="Tiempo" class="cta-side-icon" />
                 <span class="icon-desc">Creá una cuenta y empezá a comprar</span>
                 <span class="colorful-text">YA MISMO</span>
@@ -126,6 +126,18 @@
         flex-direction: column;
         align-items: center;
         gap: 2vw;
+        opacity: 0;
+        animation: fadeInHero 1.2s ease-out forwards;
+    }
+    @keyframes fadeInHero {
+        from {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     .hero-logo {
         width: 180px;
@@ -163,14 +175,7 @@
         margin-top: 12vh;
         margin-bottom: 3vh;
     }
-    .platform-images img {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        background: #F0F0F0;
-        object-fit: contain;
-        box-shadow: 0 2px 8px #0001;
-    }
+
     .section-cta {
         align-items: center;
         text-align: center;
@@ -349,6 +354,35 @@
         align-items: center;
         gap: 0;
         max-width: 220px;
+        opacity: 0;
+    }
+    .cta-side-icon-container.left {
+        animation: fadeInLeft 1.2s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+    .cta-side-icon-container.right {
+        animation: fadeInRight 1.2s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+    @keyframes fadeInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-60px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes fadeInRight {
+        from {
+            opacity: 0;
+            transform: translateX(60px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
     }
     .cta-icons-row {
         display: flex;
@@ -384,10 +418,6 @@
         .hero-logo {
             width: 80px;
             height: 80px;
-        }
-        .platform-images img {
-            width: 40px;
-            height: 40px;
         }
         .cta-button {
             font-size: 1rem;

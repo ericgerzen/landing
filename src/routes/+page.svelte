@@ -47,18 +47,18 @@
     <!-- Section 3: Nosotros -->
     <section id="nosotros" class="section section-alt">
         <h2 class="section-title section-title-large center section-title-top">¿Por qué nosotros?</h2>
-        <div class="section-icons-row spaced-row more-space">
-            <div class="icon-text">
+        <div class="section-icons-row nosotros-icons-column">
+            <div class="icon-text icon-text-row">
                 <img src="/Escudo.png" alt="Icono 1" class="icon-img" />
-                <span class="icon-desc">Ofrecemos excelentes<br>garantías</span>
+                <span class="icon-desc">Excelentes garantías</span>
             </div>
-            <div class="icon-text">
+            <div class="icon-text icon-text-row">
                 <img src="/Checklist.png" alt="Icono 2" class="icon-img" />
-                <span class="icon-desc">Todos nuestros productos<br>son extensamente testeados</span>
+                <span class="icon-desc">Productos testeados</span>
             </div>
-            <div class="icon-text">
+            <div class="icon-text icon-text-row">
                 <img src="/Pricetag.png" alt="Icono 3" class="icon-img" />
-                <span class="icon-desc">Cobramos mínimas tarifas<br>a los vendedores</span>
+                <span class="icon-desc">Mínimas tarifas</span>
             </div>
         </div>
     </section>
@@ -222,10 +222,40 @@
         gap: 5vw;
         margin-top: 2vh;
     }
-    .spaced-row {
+    .nosotros-icons-column {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 3rem;
+        width: 100%;
+        max-width: 600px;
+        margin-left: 6vw;
+    }
+    .nosotros-icons-column .icon-text-row {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 2.5rem;
+        min-width: 0;
+    }
+    .nosotros-icons-column .icon-img {
+        margin-bottom: 0;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px #0001;
+        padding: 0.5rem;
+    }
+    .nosotros-icons-column .icon-desc {
+        margin-top: 0;
+        font-size: 1.3rem;
+        text-align: left;
+        color: #fff;
+        text-shadow: 0 2px 8px #0002;
+    }
+    .section-icons-row.spaced-row {
         gap: 10vw;
     }
-    .more-space {
+    .section-icons-row.more-space {
         gap: 14vw;
     }
     .icon-text {
@@ -479,5 +509,33 @@
             min-height: 33vw;
             height: 33vw;
         }
+    }
+
+    #nosotros {
+        align-items: flex-start;
+        padding-left: 6vw;
+        background: linear-gradient(90deg, #6C63FF 0%, #48C9B0 100%) !important;
+        color: #fff;
+    }
+
+    #nosotros .nosotros-icons-column {
+        align-items: flex-start;
+        width: 100%;
+        max-width: 800px;
+        margin-left: 0;
+    }
+
+    #nosotros .nosotros-icons-column .icon-desc {
+        color: #fff;
+        text-shadow: 0 2px 8px #0002;
+    }
+    #nosotros .nosotros-icons-column .icon-img {
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px #0001;
+        padding: 0.5rem;
+    }
+    #nosotros .section-title {
+        color: #fff;
     }
 </style>

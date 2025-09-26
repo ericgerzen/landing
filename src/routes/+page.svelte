@@ -1,5 +1,4 @@
 <script>
-    // This script is for the smooth scroll link in Section 1
     function scrollToPropuesta() {
         const el = document.getElementById('la-propuesta');
         if (el) {
@@ -65,13 +64,13 @@
     <section id="la-plataforma" class="section section-light platform-bg-section">
         <h2 class="section-title section-title-large center section-title-top">La plataforma</h2>
         <div class="platform-bg-row">
-            <div class="platform-bg-col" style="--bg-img: url('/gpu.png');">
+            <div class="platform-bg-col">
                 <img src="/gpu.png" alt="Plataforma 1" class="icon-img platform-img-round platform-img-xlarge" />
             </div>
-            <div class="platform-bg-col" style="--bg-img: url('/wcooling.png');">
+            <div class="platform-bg-col">
                 <img src="/wcooling.png" alt="Plataforma 2" class="icon-img platform-img-round platform-img-xlarge" />
             </div>
-            <div class="platform-bg-col" style="--bg-img: url('/pc.png');">
+            <div class="platform-bg-col">
                 <img src="/pc.png" alt="Plataforma 3" class="icon-img platform-img-round platform-img-xlarge" />
             </div>
         </div>
@@ -98,25 +97,19 @@
     </section>
 
     <script>
-        // Select all sections that you want to animate on scroll
-        const animatedSections = document.querySelectorAll('#nosotros, #ingresar-ahora');
+        const animatedSections = document.querySelectorAll('#nosotros, #la-plataforma, #ingresar-ahora');
 
         const observer = new IntersectionObserver((entries, observerInstance) => {
             entries.forEach(entry => {
-                // Check if the section is intersecting (visible)
                 if (entry.isIntersecting) {
-                    // Add the class to trigger the animations
                     entry.target.classList.add('is-visible');
-                    // Stop observing the section once it has become visible
                     observerInstance.unobserve(entry.target);
                 }
             });
         }, {
-            // Trigger when 40% of the element is visible
             threshold: 0.4
         });
 
-        // Tell the observer to watch each of the selected sections
         animatedSections.forEach(section => {
             observer.observe(section);
         });
@@ -347,15 +340,26 @@
         left: 50%;
         width: 70%;
         height: 70%;
-        transform: translate(-50%, -50%);
-        background-image: var(--bg-img);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        opacity: 0.13;
+
+        transform: translate(-50%, -50%) scale(0);
+        background: linear-gradient(to bottom, #6C63FF 0%, #48C9B0 100%);
+        opacity: 0.5;
         z-index: 1;
         border-radius: 50%;
     }
+
+    #la-plataforma:global(.is-visible) .platform-bg-col::before {
+        animation: scaleUpCircle 0.8s ease-out forwards;
+    }
+
+    #la-plataforma:global(.is-visible) .platform-bg-col:nth-child(2)::before {
+        animation-delay: 0.2s;
+    }
+    #la-plataforma:global(.is-visible) .platform-bg-col:nth-child(3)::before {
+        animation-delay: 0.4s;
+    }
+
+
     .platform-bg-col img {
         position: relative;
         z-index: 2;
@@ -401,20 +405,19 @@
         transform: translateY(6px) scale(1.08);
     }
 
-    /* === MODIFICATIONS FOR SECTION 5 ANIMATION === */
     .cta-side-icon-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0;
         max-width: 220px;
-        opacity: 0; /* Starts hidden */
+        opacity: 0;
     }
     .cta-side-icon-container.left {
-        transform: translateX(-60px); /* Set initial position from keyframe */
+        transform: translateX(-60px);
     }
     .cta-side-icon-container.right {
-        transform: translateX(60px); /* Set initial position from keyframe */
+        transform: translateX(60px);
     }
 
     /* Keyframes for Section 5 */
@@ -630,6 +633,7 @@
     }
     #nosotros .section-title {
         color: #fff;
+        margin-top: 1rem;
     }
     #nosotros .nosotros-icons-column .icon-desc {
         color: #fff;
@@ -650,6 +654,15 @@
     #nosotros:global(.is-visible) .gamer-img {
         animation: fadeInFromRight 1.2s ease-out forwards;
         animation-delay: 0.8s;
+    }
+
+    @keyframes scaleUpCircle {
+        from {
+            transform: translate(-50%, -50%) scale(0);
+        }
+        to {
+            transform: translate(-50%, -50%) scale(1);
+        }
     }
 
 </style>

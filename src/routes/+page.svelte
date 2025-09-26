@@ -1,4 +1,5 @@
 <script>
+    // This script is for the smooth scroll link in Section 1
     function scrollToPropuesta() {
         const el = document.getElementById('la-propuesta');
         if (el) {
@@ -8,7 +9,6 @@
 </script>
 
 <main class="main-content">
-    <!-- Section 1: Logo & Header -->
     <section id="inicio" class="section section-hero">
         <div class="hero-content">
             <img src="/logo.png" alt="TechMarketBA Logo" class="hero-logo" />
@@ -25,7 +25,6 @@
         </div>
     </section>
 
-    <!-- Section 2: La Propuesta -->
     <section id="la-propuesta" class="section section-light">
         <h2 class="section-title section-title-large center section-title-top">La propuesta</h2>
         <div class="section-icons-row spaced-row more-space">
@@ -44,7 +43,6 @@
         </div>
     </section>
 
-    <!-- Section 3: Nosotros -->
     <section id="nosotros" class="section section-alt">
         <h2 class="section-title section-title-large center section-title-top">¿Por qué nosotros?</h2>
         <div class="section-icons-row nosotros-icons-column">
@@ -61,9 +59,9 @@
                 <span class="icon-desc">Mínimas tarifas</span>
             </div>
         </div>
+        <img src="gamer.png" alt="Gamer" class="gamer-img" />
     </section>
 
-    <!-- Section 4: La Plataforma -->
     <section id="la-plataforma" class="section section-light platform-bg-section">
         <h2 class="section-title section-title-large center section-title-top">La plataforma</h2>
         <div class="platform-bg-row">
@@ -79,7 +77,6 @@
         </div>
     </section>
 
-    <!-- Section 5: Ingresá Ahora -->
     <section id="ingresar-ahora" class="section section-alt section-cta">
         <h2 class="section-title section-title-large center">Ingresá ahora</h2>
         <div class="cta-icons-row">
@@ -99,6 +96,31 @@
         <p class="cta-subtitle center">¡Registrate y sé parte del cambio!</p>
         <button class="cta-button">Llevame ahí</button>
     </section>
+
+    <script>
+        // Select all sections that you want to animate on scroll
+        const animatedSections = document.querySelectorAll('#nosotros, #ingresar-ahora');
+
+        const observer = new IntersectionObserver((entries, observerInstance) => {
+            entries.forEach(entry => {
+                // Check if the section is intersecting (visible)
+                if (entry.isIntersecting) {
+                    // Add the class to trigger the animations
+                    entry.target.classList.add('is-visible');
+                    // Stop observing the section once it has become visible
+                    observerInstance.unobserve(entry.target);
+                }
+            });
+        }, {
+            // Trigger when 40% of the element is visible
+            threshold: 0.4
+        });
+
+        // Tell the observer to watch each of the selected sections
+        animatedSections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </main>
 
 <style>
@@ -378,22 +400,24 @@
     .downwards-link:hover {
         transform: translateY(6px) scale(1.08);
     }
+
+    /* === MODIFICATIONS FOR SECTION 5 ANIMATION === */
     .cta-side-icon-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 0;
         max-width: 220px;
-        opacity: 0;
+        opacity: 0; /* Starts hidden */
     }
     .cta-side-icon-container.left {
-        animation: fadeInLeft 1.2s ease-out forwards;
-        animation-delay: 0.3s;
+        transform: translateX(-60px); /* Set initial position from keyframe */
     }
     .cta-side-icon-container.right {
-        animation: fadeInRight 1.2s ease-out forwards;
-        animation-delay: 0.3s;
+        transform: translateX(60px); /* Set initial position from keyframe */
     }
+
+    /* Keyframes for Section 5 */
     @keyframes fadeInLeft {
         from {
             opacity: 0;
@@ -414,6 +438,17 @@
             transform: translateX(0);
         }
     }
+
+    /* Rules to apply Section 5 animation when visible */
+    #ingresar-ahora:global(.is-visible) .cta-side-icon-container.left {
+        animation: fadeInLeft 1.2s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+    #ingresar-ahora:global(.is-visible) .cta-side-icon-container.right {
+        animation: fadeInRight 1.2s ease-out forwards;
+        animation-delay: 0.3s;
+    }
+
     .cta-icons-row {
         display: flex;
         flex-direction: row;
@@ -509,6 +544,10 @@
             min-height: 33vw;
             height: 33vw;
         }
+        .gamer-img {
+            width: 300px;
+            height: 300px;
+        }
     }
 
     #nosotros {
@@ -516,6 +555,8 @@
         padding-left: 6vw;
         background: linear-gradient(90deg, #6C63FF 0%, #48C9B0 100%) !important;
         color: #fff;
+        position: relative; /* Crucial for positioning the gamer image */
+        overflow: hidden; /* Prevents horizontal scrollbar */
     }
 
     #nosotros .nosotros-icons-column {
@@ -523,12 +564,64 @@
         width: 100%;
         max-width: 800px;
         margin-left: 0;
+        position: relative; /* Ensures text is on top of the image */
+        z-index: 1;
     }
 
-    #nosotros .nosotros-icons-column .icon-desc {
-        color: #fff;
-        text-shadow: 0 2px 8px #0002;
+    /* === NEW STYLES FOR GAMER IMAGE === */
+    .gamer-img {
+        position: absolute;
+        width: 400px;
+        height: 100%;
+        object-fit: cover;
+        top: 50%;
+        right: 0;
+        transform: translate(10%, -50%);
+        opacity: 0;
+        z-index: 0;
+
+        mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+        mask-mode: alpha; /* Use the alpha channel of the gradient for masking */
+        mask-size: 100% 100%; /* Ensure the mask covers the entire image */
     }
+
+
+    /* === NEW STYLES FOR SECTION 3 ANIMATION === */
+    /* Keyframe for "Nosotros" text */
+    @keyframes fadeInLeftText {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    /* Initial hidden state for the text */
+    #nosotros .nosotros-icons-column .icon-desc {
+        opacity: 0;
+    }
+
+    /* Apply animation when section is visible */
+    #nosotros:global(.is-visible) .icon-text-row .icon-desc {
+        animation: fadeInLeftText 0.8s ease-out forwards;
+    }
+
+    /* Staggered delay for each item */
+    #nosotros:global(.is-visible) .icon-text-row:nth-of-type(1) .icon-desc {
+        animation-delay: 0.2s;
+    }
+    #nosotros:global(.is-visible) .icon-text-row:nth-of-type(2) .icon-desc {
+        animation-delay: 0.4s;
+    }
+    #nosotros:global(.is-visible) .icon-text-row:nth-of-type(3) .icon-desc {
+        animation-delay: 0.6s;
+    }
+
+
+    /* Keep original styles for "Nosotros" */
     #nosotros .nosotros-icons-column .icon-img {
         background: #fff;
         border-radius: 50%;
@@ -538,4 +631,25 @@
     #nosotros .section-title {
         color: #fff;
     }
+    #nosotros .nosotros-icons-column .icon-desc {
+        color: #fff;
+        text-shadow: 0 2px 8px #0002;
+    }
+
+    @keyframes fadeInFromRight {
+        from {
+            opacity: 0;
+            transform: translate(40%, -50%);
+        }
+        to {
+            opacity: 0.40; /* End at its final opacity */
+            transform: translate(10%, -50%); /* End in its final position */
+        }
+    }
+
+    #nosotros:global(.is-visible) .gamer-img {
+        animation: fadeInFromRight 1.2s ease-out forwards;
+        animation-delay: 0.8s;
+    }
+
 </style>

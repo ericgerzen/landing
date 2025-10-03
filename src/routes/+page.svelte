@@ -97,7 +97,7 @@
     </section>
 
     <script>
-        const animatedSections = document.querySelectorAll('#nosotros, #la-plataforma, #ingresar-ahora');
+        const animatedSections = document.querySelectorAll('#la-propuesta, #nosotros, #la-plataforma, #ingresar-ahora');
 
         const observer = new IntersectionObserver((entries, observerInstance) => {
             entries.forEach(entry => {
@@ -107,7 +107,7 @@
                 }
             });
         }, {
-            threshold: 0.4
+            threshold: 0.5
         });
 
         animatedSections.forEach(section => {
@@ -663,6 +663,33 @@
         to {
             transform: translate(-50%, -50%) scale(1);
         }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #la-propuesta .icon-text {
+        opacity: 0;
+    }
+
+    #la-propuesta:global(.is-visible) .icon-text {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    #la-propuesta:global(.is-visible) .icon-text:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    #la-propuesta:global(.is-visible) .icon-text:nth-child(3) {
+        animation-delay: 0.4s;
     }
 
 </style>
